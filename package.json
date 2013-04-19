@@ -1,0 +1,27 @@
+{
+  "name": "chunker",
+  "version": "0.1.0",
+  "description": "Chunk/split your stream without eating the splitter char.",
+  "main": "index.js",
+  "devDependencies": {
+    "coffee-script": "~1.6.2",
+    "tap": "~0.4.1",
+    "supervisor": "~0.5.2",
+    "buffer-equal": "0.0.0"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chakrit/chunker.git"
+  },
+  "keywords": [
+    "chunker",
+    "chunking",
+    "splitting",
+    "streams"
+  ],
+  "author": "Chakrit Wichian <service@chakrit.net> (http://chakrit.net)",
+  "license": "BSD"
+}
