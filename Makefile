@@ -30,7 +30,7 @@ test: all | node_modules
 	@$(BIN)/tap $(TAP_OPTS) test.js
 
 tdd: all | node_modules
-	$(BIN)/supervisor $(SUPERVISOR_OPTS) -x $(MAKE) -- test test.js
+	$(BIN)/supervisor $(SUPERVISOR_OPTS) -x $(MAKE) -- test
 
 
 .PHONY: clean tdd test

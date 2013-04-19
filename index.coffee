@@ -32,8 +32,8 @@ module.exports = do ->
 
         # then scan backwards
         match = i
-        for j in [i..i - @matcher.length] by -1
-          continue unless chunk[j] is @matcher[@matcher.length - i - j - 1]
+        for j in [i...i - @matcher.length] by -1
+          continue if chunk[j] is @matcher[@matcher.length - i + j - 1]
           match = -1
 
         if match > -1
