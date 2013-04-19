@@ -3,6 +3,15 @@
   "version": "0.1.1",
   "description": "Chunk/split your stream without eating the splitter char.",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE",
+    "test.js",
+    "input.txt",
+    "output.txt",
+    "package.json"
+  ],
   "devDependencies": {
     "coffee-script": "~1.6.2",
     "tap": "~0.4.1",
