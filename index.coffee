@@ -37,7 +37,10 @@ module.exports = do ->
           match = -1
 
         if match > -1
-          @push chunk.slice start, match + 1
+          part = chunk.slice start, match + 1
+          @push part
+          @emit 'chunk', part
+
           start = match + 1
 
       # save stuff from last matched item

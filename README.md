@@ -17,6 +17,8 @@ This module exports a `Chunker` class. This is simply an instance of a
 chunk until the specified splitter token (called a `matcher` inside the
 codebase)
 
+For convenience, you can also listen for the chunker's `chunk` event.
+
 ### example.js
 
 ```js
