@@ -7,6 +7,8 @@ Split your streams into chunks with an arbitary-length matcher. Explicitly
 does not consume tokens. Useful for splitting up chunks and passing it to an
 external parser that expects the split tokens to be there.
 
+Chunker is designed to work with very small splitter token such as CRLF or '\0'.
+
 # API
 
 This module exports a `Chunker` class. This is simply an instance of a
@@ -50,6 +52,12 @@ makes your heart tick or you will forgot what
 # LICENSE
 
 BSD3 (see LICENSE file)
+
+# TODO
+
+* Support for longer-length chunker or use a proper state machine string matching
+  algorithm.
+* More exhausive streaming tests.
 
 [0]: http://nodejs.org/api/stream.html#stream_class_stream_transform
 
