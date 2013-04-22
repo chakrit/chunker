@@ -1,6 +1,6 @@
 {
   "name": "chunker",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Chunk/split your stream without eating the splitter char.",
   "main": "index.js",
   "files": [
