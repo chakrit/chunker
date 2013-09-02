@@ -1,3 +1,4 @@
+#!/usr/bin/env coffee
 
 # test.coffee - Tests the chunker
 do ->
