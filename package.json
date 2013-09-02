@@ -13,7 +13,7 @@
     "package.json"
   ],
   "devDependencies": {
-    "coffee-script": "~1.6.2",
+    "coffee-script": "~1.6.3",
     "tap": "~0.4.1",
     "supervisor": "~0.5.2",
     "buffer-equal": "0.0.0"
