@@ -5,7 +5,7 @@ module.exports = do ->
   stream = require 'stream'
 
   return class Chunker extends stream.Transform
-    previous: null
+    leftover: null
     matcher: new Buffer '\r\n'
 
     constructor: (options) ->
@@ -21,10 +21,10 @@ module.exports = do ->
       start = 0
       skip = 0
 
-      if @previous
-        chunk = Buffer.concat [@previous, chunk], @previous.length + chunk.length
-        skip = @previous.length - @matcher.length # skip checked bytes
-        @previous = null
+      if @leftover
+        chunk = Buffer.concat [@leftover, chunk], @leftover.length + chunk.length
+        skip = @leftover.length - @matcher.length # skip checked bytes
+        @leftover = null
 
       # scan for last char
       for i in [skip...chunk.length] by 1
@@ -38,12 +38,11 @@ module.exports = do ->
 
         if match > -1
           part = chunk.slice start, match + 1
+          start = match + 1
+          @leftover = chunk.slice start # correct @leftover if unpipe()-ed during a chunk
           @push part
           @emit 'chunk', part
 
-          start = match + 1
-
-      # save stuff from last matched item
-      @previous = chunk.slice start
+      @leftover = chunk.slice start
       callback null
 
