@@ -16,7 +16,6 @@ module.exports = do ->
 
     _transform: (chunk, encoding, callback) ->
       pivot = @matcher[@matcher.length - 1]
-      matched = false
       match = -1
       start = 0
       skip = 0
